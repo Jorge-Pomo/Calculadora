@@ -4,27 +4,29 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="377.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="475.0" prefWidth="377.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.CalculadoraController">
    <children>
-      <TextField layoutX="14.0" layoutY="14.0" prefHeight="90.0" prefWidth="349.0" />
-      <Button layoutX="6.0" layoutY="338.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="1" />
-      <Button layoutX="6.0" layoutY="283.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="4" />
-      <Button layoutX="6.0" layoutY="232.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="7" />
-      <Button layoutX="88.0" layoutY="338.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="2" />
-      <Button layoutX="88.0" layoutY="283.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="5" />
-      <Button layoutX="88.0" layoutY="232.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="8" />
-      <Button layoutX="173.0" layoutY="338.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="3" />
-      <Button layoutX="173.0" layoutY="283.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="6" />
-      <Button layoutX="173.0" layoutY="232.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="9" />
-      <Button id="boton_0" layoutX="88.0" layoutY="392.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="0" />
-      <Button layoutX="270.0" layoutY="392.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="=" />
-      <Button layoutX="270.0" layoutY="338.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="+" />
-      <Button layoutX="270.0" layoutY="283.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="-" />
-      <Button layoutX="270.0" layoutY="232.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="x" />
-      <Button layoutX="270.0" layoutY="179.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="/" />
-      <Button layoutX="270.0" layoutY="128.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="&lt;--" />
-      <Button layoutX="173.0" layoutY="392.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="," />
-      <Button layoutX="88.0" layoutY="179.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="CE" />
-      <Button layoutX="173.0" layoutY="179.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="C" />
+      <TextField fx:id="display" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="90.0" prefWidth="349.0" />
+      <Button fx:id="boton_0" layoutX="88.0" layoutY="392.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="0" />
+      <Button fx:id="boton_1" layoutX="6.0" layoutY="338.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="1" />
+      <Button fx:id="boton_2" layoutX="88.0" layoutY="338.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="2" />
+      <Button fx:id="boton_3" layoutX="173.0" layoutY="338.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="3" />
+      <Button fx:id="boton_4" layoutX="6.0" layoutY="283.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="4" />
+      <Button fx:id="boton_5" layoutX="88.0" layoutY="283.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="5" />
+      <Button fx:id="boton_6" layoutX="173.0" layoutY="283.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="6" />
+      <Button fx:id="boton_7" layoutX="6.0" layoutY="232.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="7" />
+      <Button fx:id="boton_8" layoutX="88.0" layoutY="232.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="8" />
+      <Button fx:id="boton_9" layoutX="173.0" layoutY="232.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="9" />
+      
+      <Button fx:id="boton_igual" layoutX="270.0" layoutY="392.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="=" />
+      <Button fx:id="boton_suma" layoutX="270.0" layoutY="338.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="+" />
+      <Button fx:id="boton_resta" layoutX="270.0" layoutY="283.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="-" />
+      <Button fx:id="boton_por" layoutX="270.0" layoutY="232.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="x" />
+      <Button fx:id="boton_div" layoutX="270.0" layoutY="179.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="/" />
+      
+      <Button fx:id="boton_arrere" layoutX="270.0" layoutY="128.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="&lt;--" />
+      <Button fx:id="boton_coma" layoutX="173.0" layoutY="392.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="," />
+      <Button fx:id="boton_supAll" layoutX="88.0" layoutY="179.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="CE" />
+      <Button fx:id="boton_sup" layoutX="173.0" layoutY="179.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="77.0" text="C" />
    </children>
 </AnchorPane>
