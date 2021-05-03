@@ -59,6 +59,11 @@ public class CalculadoraController implements Initializable {
 
 	private Calculadora calculadora;
 
+	double num1 = 0;
+	double num2 = 0;
+
+	String calculo = "";
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// Evento botones, apertura de ventanas
@@ -77,10 +82,11 @@ public class CalculadoraController implements Initializable {
 		boton_resta.setOnMouseClicked((event) -> asignarOperacion("-"));
 		boton_por.setOnMouseClicked((event) -> asignarOperacion("x"));
 		boton_div.setOnMouseClicked((event) -> asignarOperacion("/"));
+
 		boton_igual.setOnMouseClicked((event) -> resultado("="));
 
 		boton_arrere.setOnMouseClicked((event) -> pulsarNumero(","));
-		boton_coma.setOnMouseClicked((event) -> pulsarNumero(","));
+		boton_coma.setOnMouseClicked((event) -> pulsarComa("."));
 		boton_supAll.setOnMouseClicked((event) -> clear());
 		boton_sup.setOnMouseClicked((event) -> clearChar());
 
@@ -89,13 +95,19 @@ public class CalculadoraController implements Initializable {
 	}
 
 	// Metodos
-	private void pulsarNumero(String i) {
-		display.setText(display.getText() + i);
+	private void pulsarNumero(String n) {
+		display.setText(display.getText() + n);
 	}
 
+	private void pulsarComa(String coma) {
+		if(display.getText().contains(".") == false) {
+			display.setText(display.getText() + coma);
+		}
+	}
+	
 	private void clear() {
 		display.clear();
-		display.setText("0");
+		display.setText("");
 	}
 
 	private void clearChar() {
@@ -104,40 +116,37 @@ public class CalculadoraController implements Initializable {
 	}
 
 	private void asignarOperacion(String opc) {
-		double num1 = 0;
-		double num2 = 0;
 
 		num1 = Double.parseDouble(display.getText());
 		calculadora.setNum1(num1);
 
-		switch (opc) {
-		case "+":			
+		if (opc.equals("+") || opc.equals("-") || opc.equals("x") || opc.contentEquals("/")) {
 			display.setText("");
-
-			num2 = Double.parseDouble(display.getText());
-			calculadora.setNum1(num2);
-			break;
-		case "-":
-
-			break;
-		case "x":
-
-			break;
-		case "/":
-
-			break;
+			calculo = opc;
 		}
+
 	}
 
 	private void resultado(String opc) {
-		switch (opc) {
-		case "=":
-			display.setText(String.valueOf(calculadora.sumar()));
-			break;
-		case "-":
-		display.setText(String.valueOf(calculadora.restar()));
-		break;
+		if (opc.contentEquals("=")) {
+			num2 = Double.parseDouble(display.getText());
+			calculadora.setNum2(num2);
+
+			switch (calculo) {
+			case "+":
+				display.setText(String.valueOf(calculadora.sumar()));
+				break;
+			case "-":
+				display.setText(String.valueOf(calculadora.restar()));
+				break;
+			case "x":
+				display.setText(String.valueOf(calculadora.multiplicar()));
+				break;
+			case "/":
+				display.setText(String.valueOf(calculadora.dividir()));
+			}
 		}
+
 	}
 
 }

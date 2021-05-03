@@ -1,10 +1,13 @@
 package modelo;
 
+import excepciones.DivisionporCeroException;
+
 public class Calculadora {
 
 	//Atributos
 	private double num1;
 	private double num2;
+	
 	private String operacion;
 	private String numActual;
 	private String numMemoria;
@@ -66,6 +69,10 @@ public class Calculadora {
 	
 	public double multiplicar(){
 		return num1*num2;
+	}
+	
+	public double dividir() throws DivisionporCeroException{
+		return num1/num2;
 	}
 //	public double dividir() throws DivisionPorCeroExcepcion{...}
 }
